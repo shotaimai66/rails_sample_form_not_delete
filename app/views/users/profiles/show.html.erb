@@ -1,33 +1,45 @@
-<% provide(:title,  "プロフィール") %>
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <%= link_to "編集", edit_user_registration_path, class:"btn btn-default" %>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">About Me</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <strong>メールアドレス</strong>
+<% provide(:title,  "Profile(１対１)") %>
 
-                <p class="text-muted">
-                  <%= current_user.email %>
-                </p>
+<%= link_to '編集', edit_users_profile_path, class: 'btn btn-outline-success mb-3' %>
 
-                <hr>
-
-                <strong>名前</strong>
-
-                <p class="text-muted"><%= current_user.name %></p>
-
-              </div>
-              <!-- /.card-body -->
-            </div>
-          </div>
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Profile(１対１)</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body p-0">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th style="width: 10px">#</th>
+          <th>key</th>
+          <th>value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>年齢</td>
+          <td>
+            <%= @profile.age %>
+          </td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>住所</td>
+          <td>
+            <%= @profile.address %>
+          </td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>電話</td>
+          <td>
+            <%= @profile.tel %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
