@@ -1,0 +1,52 @@
+<% provide(:title,  "article(１対１)") %>
+
+<%= link_to '一覧に戻る', users_articles_path, class: 'btn btn-outline-primary mb-3' %>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">article(１対１)</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body p-0">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th style="width: 10px">#</th>
+          <th>key</th>
+          <th>value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>id</td>
+          <td>
+            <%= @article.id %>
+          </td>
+        </tr>
+        <tr>
+          <td>1.</td>
+          <td>タイトル</td>
+          <td>
+            <%= @article.title %>
+          </td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>サブタイトル</td>
+          <td>
+            <%= @article.sub_title %>
+          </td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>住所</td>
+          <td>
+            <%= @article.content %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
