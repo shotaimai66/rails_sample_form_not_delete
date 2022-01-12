@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   namespace :users do
     resources :dash_boards, only: [:index]
     resources :articles
+    resources :todo_lists
     resource :profile, except: %i[delete]
   end
 

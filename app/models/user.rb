@@ -8,7 +8,10 @@ class User < ApplicationRecord
     :confirmable
 
   has_many :articles, dependent: :destroy
+  has_many :todo_lists, dependent: :destroy
   has_one :profile, dependent: :destroy
+
+  accepts_nested_attributes_for :todo_lists
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
